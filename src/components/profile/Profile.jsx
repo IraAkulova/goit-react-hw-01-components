@@ -1,29 +1,19 @@
 import PropTypes from 'prop-types';
+import { Card } from 'components/card/Card';
+import user from 'user.json';
+import { StatsItem } from 'components/statsItem/StatsItem';
+import css from './Profile.module.css';
 
 export function Profile({ username, tag, location, avatar, stats }) {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt="User avatar" class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
-      </div>
-
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{stats.likes}</span>
-        </li>
-      </ul>
+    <div className={css.profile}>
+      <Card
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+      />
+      <StatsItem stats={user.stats} />
     </div>
   );
 };
@@ -34,8 +24,8 @@ Profile.propTypes = {
   location: PropTypes.string,
   avatar: PropTypes.string,
   stats: PropTypes.exact({
-    followers: PropTypes.string,
-    views: PropTypes.string,
-    likes: PropTypes.string,
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
   }),
 };
