@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { Card } from 'components/card/Card';
+import { Card } from 'components/profile/card/Card';
 import user from 'user.json';
-import { StatsItem } from 'components/statsItem/StatsItem';
+import { StatsItem } from 'components/profile/statsItem/StatsItem';
 import css from './Profile.module.css';
 
 export function Profile({ username, tag, location, avatar, stats }) {
