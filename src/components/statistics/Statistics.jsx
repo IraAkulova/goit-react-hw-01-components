@@ -4,8 +4,8 @@ import data from 'data.json';
 import { StatsList } from 'components/statistics/statsList/StatsList';
 import css from './Statistics.module.css';
 
-export function Statistics() {
-    return (
+export function Statistics({title, stats}) {
+  return (
       <section className={css.statistics}>
         <Title title="UPLOADRD STATS" />
         <StatsList stats={data} />
