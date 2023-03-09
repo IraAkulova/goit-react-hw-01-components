@@ -6,11 +6,11 @@ import css from './Statistics.module.css';
 
 export function Statistics({title, stats}) {
   return (
-      <section className={css.statistics}>
-        <Title title="UPLOADRD STATS" />
-        <StatsList stats={data} />
-      </section>
-    );
+    <section className={css.statistics}>
+      <Title title="Upload stats" />
+      <StatsList stats={data} />
+    </section>
+  );
 };
 
 Statistics.propTypes = {

@@ -26,7 +26,3 @@ export function FriendListItem({ avatar, name, isOnline }) {
           </li>
         );
 };
-
-// function getActiveHexColor({isOnline}) {
-//   return isOnline ? `#00ff00` : `#ff0000`;
-// };
