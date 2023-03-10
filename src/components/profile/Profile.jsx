@@ -1,19 +1,31 @@
 import PropTypes from 'prop-types';
-import { Card } from 'components/profile/card/Card';
-import user from 'user.json';
-import { StatsItem } from 'components/profile/statsItem/StatsItem';
 import css from './Profile.module.css';
 
 export function Profile({ username, tag, location, avatar, stats }) {
   return (
     <div className={css.profile}>
-      <Card
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-      />
-      <StatsItem stats={user.stats} />
+      <div className={css.description}>
+        {' '}
+        <img src={avatar} alt="User avatar" className={css.avatar} />
+        <p className={css.name}>{username}</p>
+        <p className={css.tag}>@{tag}</p>
+        <p className={css.location}>{location}</p>
+      </div>
+
+      <ul className={css.stats}>
+        <li className={css.stat}>
+          <span className={css.label}>Followers</span>
+          <span className={css.quantity}>{stats.followers}</span>
+        </li>
+        <li className={css.stat}>
+          <span className={css.label}>Views</span>
+          <span className={css.quantity}>{stats.views / 1000}</span>
+        </li>
+        <li className={css.stat}>
+          <span className={css.label}>Likes</span>
+          <span className={css.quantity}>{stats.likes}</span>
+        </li>
+      </ul>
     </div>
   );
 };
